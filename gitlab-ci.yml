@@ -1,0 +1,11 @@
+# стадия пайплайна
+stages:
+  - test
+
+# job для стадии test
+nginx_check:
+  stage: test                     # указываем стадию
+  script:                         # команды для выполнения
+    - echo "checking nginx..."    
+    - which nginx                 # проверяет установлен ли nginx
+    - nginx -v                    # выводит версию nginx
